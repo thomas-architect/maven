@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>x-upload</artifactId>
+        <groupId>com.xframe</groupId>
+        <version>1.7.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.7.1</version>
+    <artifactId>x-upload-cos</artifactId>
+
+    <dependencies>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.tencent.cloud</groupId>-->
+        <!--            <artifactId>cos-sts-java</artifactId>-->
+        <!--            <version>3.0.6</version>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <artifactId>json</artifactId>-->
+        <!--                    <groupId>org.json</groupId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api</artifactId>
+            <version>5.6.61</version>
+        </dependency>
+    </dependencies>
+</project>

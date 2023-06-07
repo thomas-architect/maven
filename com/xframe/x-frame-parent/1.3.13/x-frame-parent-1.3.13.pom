@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>x-frame</artifactId>
+        <groupId>com.xframe</groupId>
+        <version>1.3.13</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>x-frame-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>nexus-aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-repos</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-repos-s</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-aliyun</id>
+            <name>nexus-aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>sonatype-repos</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>sonatype-repos-s</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>prod</id>-->
+    <!--            <build>-->
+    <!--                <pluginManagement>-->
+    <!--                    <plugins>-->
+    <!--                        <plugin>-->
+    <!--                            <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                            <artifactId>maven-dependency-plugin</artifactId>-->
+    <!--                            <version>${maven-dependency-plugin.version}</version>-->
+    <!--                            <executions>-->
+    <!--                                <execution>-->
+    <!--                                    <id>copy-dependencies</id>-->
+    <!--                                    <phase>package</phase>-->
+    <!--                                    <goals>-->
+    <!--                                        <goal>copy-dependencies</goal>-->
+    <!--                                    </goals>-->
+    <!--                                    <configuration>-->
+    <!--                                        <outputDirectory>${project.build.directory}/lib</outputDirectory>-->
+    <!--                                        <excludeArtifactIds>-->
+    <!--                                            spring-boot-devtools,-->
+    <!--                                            spring-boot-configuration-processor,-->
+    <!--                                            x-code,-->
+    <!--                                            lombok,-->
+    <!--                                            springfox-swagger2-->
+    <!--                                        </excludeArtifactIds>-->
+    <!--                                        <excludeGroupIds>-->
+    <!--                                            com.github.xiaoymin,com.spring4all-->
+    <!--                                        </excludeGroupIds>-->
+    <!--                                        <excludeTransitive>false</excludeTransitive>-->
+    <!--                                    </configuration>-->
+    <!--                                </execution>-->
+    <!--                                <execution>-->
+    <!--                                    <id>copy-frame</id>-->
+    <!--                                    <phase>package</phase>-->
+    <!--                                    <goals>-->
+    <!--                                        <goal>copy-dependencies</goal>-->
+    <!--                                    </goals>-->
+    <!--                                    <configuration>-->
+    <!--                                        <outputDirectory>${project.build.directory}/xframe</outputDirectory>-->
+    <!--                                        <includeGroupIds>com.xframe</includeGroupIds>-->
+    <!--                                        <excludeArtifactIds>x-code</excludeArtifactIds>-->
+    <!--                                    </configuration>-->
+    <!--                                </execution>-->
+    <!--                            </executions>-->
+    <!--                        </plugin>-->
+    <!--                    </plugins>-->
+    <!--                </pluginManagement>-->
+    <!--            </build>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <!-- 资源文件配置 -->
+        <!--        <resources>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/java</directory>-->
+        <!--                <excludes>-->
+        <!--                    <exclude>**/*.java</exclude>-->
+        <!--                </excludes>-->
+        <!--            </resource>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/resources</directory>-->
+        <!--            </resource>-->
+        <!--        </resources>-->
+
+        <plugins>
+            <!-- Compiler 插件, 设定 JDK 版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--                <configuration>-->
+                <!--                    <showWarnings>true</showWarnings>-->
+                <!--                </configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-resources-plugin</artifactId>-->
+            <!--            </plugin>-->
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <mainClass>${startClass}</mainClass>
+                        <fork>true</fork>
+                        <!--去除在生产环境中不变的依赖-->
+                        <excludeGroupIds>
+                            org.springframework.boot,
+                            org.springframework,
+                            org.springframework.data,
+                            org.mongodb,
+                            com.github.0604hx,
+                            com.fasterxml.jackson.core,
+                            commons-beanutils,
+                            commons-codec,
+                            org.projectlombok,
+                            org.apache.commons,
+                            org.apache.tomcat.embed,
+                            org.hibernate,
+                            org.slf4j,
+                            com.jayway,
+                            org.jboss,
+                            com.alibaba,
+                            com.fasterxml,
+                            commons-collections,
+                            ch.qos.logback,
+                            org.scala-lang,
+                            org.yaml,
+                            org.jboss.logging,
+                            javax.validation,
+                            nz.net.ultraq.thymeleaf,
+                            org.thymeleaf,
+                            ognl,
+                            org.unbescape,
+                            org.javassist
+                        </excludeGroupIds>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <useUniqueVersions>false</useUniqueVersions>
+                                <addClasspath>true</addClasspath>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <classpathPrefix>lib/</classpathPrefix>
+                                <mainClass>${startClass}</mainClass>
+                            </manifest>
+                            <manifestEntries>
+                                <!--MANIFEST.MF 中 Class-Path 加入资源文件目录-->
+                                <Class-Path>./config/</Class-Path>
+                            </manifestEntries>
+                        </archive>
+                        <excludes>
+                            <!--<exclude>*.properties</exclude>-->
+                            <exclude>*.yml</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                                <excludeArtifactIds>
+                                    spring-boot-devtools,x-code,lombok,spring-boot-configuration-processor
+                                </excludeArtifactIds>
+                                <!-- 表示是否不包含间接依赖的包 -->
+                                <excludeTransitive>false</excludeTransitive>
+                                <!-- 表示复制的jar文件去掉版本信息 -->
+                                <!--<stripVersion>true</stripVersion>-->
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>copy-frame</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/xframe</outputDirectory>
+                                <includeGroupIds>com.xframe</includeGroupIds>
+                                <excludeArtifactIds>x-code</excludeArtifactIds>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>copy-resources</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <resources>
+                                    <resource>
+                                        <directory>src/main/resources</directory>
+                                    </resource>
+                                </resources>
+                                <outputDirectory>${project.build.directory}/config</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <mainClass>${startClass}</mainClass>
+                            </manifest>
+                        </archive>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.2.2</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <minimizeJar>true</minimizeJar>
+                                <transformers>
+                                    <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                        <resource>META-INF/spring.handlers</resource>
+                                    </transformer>
+                                    <transformer
+                                            implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
+                                        <resource>META-INF/spring.factories</resource>
+                                    </transformer>
+                                    <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                        <resource>META-INF/spring.schemas</resource>
+                                    </transformer>
+                                    <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                    <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <mainClass>${startClass}</mainClass>
+                                    </transformer>
+                                </transformers>
+                                <filters>
+                                    <filter>
+                                        <artifact>*:*</artifact>
+                                        <excludes>
+                                            <exclude>META-INF/*.SF</exclude>
+                                            <exclude>META-INF/*.DSA</exclude>
+                                            <exclude>META-INF/*.RSA</exclude>
+                                        </excludes>
+                                    </filter>
+                                </filters>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-maven-plugin</artifactId>
+                            <version>${spring.boot.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <keepDependenciesWithProvidedScope>true</keepDependenciesWithProvidedScope>
+                        <createDependencyReducedPom>true</createDependencyReducedPom>
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                    </configuration>
+                </plugin>
+
+                <!-- Java Document Generate -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- YUI Compressor (CSS/JS压缩) -->
+                <!--                <plugin>-->
+                <!--                    <groupId>net.alchim31.maven</groupId>-->
+                <!--                    <artifactId>yuicompressor-maven-plugin</artifactId>-->
+                <!--                    <version>1.5.1</version>-->
+                <!--                    <executions>-->
+                <!--                        <execution>-->
+                <!--                            <phase>prepare-package</phase>-->
+                <!--                            <goals>-->
+                <!--                                <goal>compress</goal>-->
+                <!--                            </goals>-->
+                <!--                        </execution>-->
+                <!--                    </executions>-->
+                <!--                    <configuration>-->
+                <!--                        <encoding>UTF-8</encoding>-->
+                <!--                        <jswarn>false</jswarn>-->
+                <!--                        <nosuffix>true</nosuffix>-->
+                <!--                        <linebreakpos>30000</linebreakpos>-->
+                <!--                        <force>true</force>-->
+                <!--                        <includes>-->
+                <!--                            <include>**/*.js</include>-->
+                <!--                            <include>**/*.css</include>-->
+                <!--                        </includes>-->
+                <!--                        <excludes>-->
+                <!--                            <exclude>**/*.min.js</exclude>-->
+                <!--                            <exclude>**/*.min.css</exclude>-->
+                <!--                        </excludes>-->
+                <!--                    </configuration>-->
+                <!--                </plugin>-->
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
