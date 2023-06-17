@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Mar 31 22:47:31 CST 2023
+@default-maven.net.cn-http\://maven.net.cn/content/groups/public/.lastUpdated=1680274051572
+http\://maven.net.cn/content/groups/public/.error=Could not transfer artifact com.anglele\:igc-base\:pom\:1.0 from/to maven.net.cn (http\://maven.net.cn/content/groups/public/)\: transfer failed for http\://maven.net.cn/content/groups/public/com/anglele/igc-base/1.0/igc-base-1.0.pom, status\: 502 Bad Gateway
+https\://maven.aliyun.com/repository/public/.error=
+https\://git.js-suifeng.cn/GraveyQuen/self-repo/raw/master/.lastUpdated=1680274046563
+https\://maven.aliyun.com/repository/public/.lastUpdated=1680274046320
+https\://git.js-suifeng.cn/GraveyQuen/self-repo/raw/master/.error=
